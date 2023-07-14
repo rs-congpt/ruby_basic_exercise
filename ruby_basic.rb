@@ -79,7 +79,7 @@ end
 # Output: false
 def exercise_10(number_1, number_2, number_3)
     return false if ((1..10).include?(number_1) && (1..10).include?(number_2) && (1..10).include?(number_3))
-    return true if ((1..10).include?(number_1) || (1..10).include?(number_2) || (1..10).include?(number_3))
+    true if ((1..10).include?(number_1) || (1..10).include?(number_2) || (1..10).include?(number_3))
 end
 
 # Write a Ruby program to print the following 'here document'.
@@ -160,7 +160,7 @@ end
 def exercise_20(number_1, number_2, number_3)
     return "y = #{number_1} is greatest" if number_1 >= number_2 && number_1 >= number_3
     return "y = #{number_2} is greatest" if number_2 >= number_3
-    return "y = #{number_3} is greatest"
+    "y = #{number_3} is greatest"
 end
 
 # Write a Ruby program to check whether a number is within 10 of 100 or 200.
@@ -415,7 +415,7 @@ def exercise_51(number_1, number_2)
     digit_2 = number_2.to_s[-1]
     number_1 = number_1.to_s[0]
     number_2 = number_2.to_s[0]
-    return digit_1 == digit_2 || digit_1 == number_2 || digit_2 == number_1 || number_1 == number_2
+    digit_1 == digit_2 || digit_1 == number_2 || digit_2 == number_1 || number_1 == number_2
 end
 
 # Write a Ruby program to check three given integers and return their sum. However, If one of the values is 
@@ -427,7 +427,7 @@ def exercise_52(number_1, number_2, number_3)
     return number_1 if number_2 == number_3
     return number_2 if number_1 == number_3
     return number_3 if number_2 == number_1
-    return number_1 + number_2 + number_3
+    number_1 + number_2 + number_3
 end
 
 # Write a Ruby program to check three given integers and compute their sum. However,
@@ -438,7 +438,7 @@ def exercise_53 (number_1, number_2, number_3)
     return 0 if number_1 == 17
     return number_1 if number_2 == 17
     return number_1 + number_2 if number_3 == 17
-    return number_1 + number_2 + number_3
+    number_1 + number_2 + number_3
 end
 
 # Write a Ruby program to check three given integers x, y, z and return true if one of y or z is close (differing from a by at most 1),

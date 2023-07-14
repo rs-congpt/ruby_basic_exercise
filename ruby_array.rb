@@ -32,7 +32,7 @@ end
 # Input: [1, 2, 3]
 # Output: 6
 def exercise_5(array_input)
-    array_input.reduce(0, :+)
+    array_input.compact.sum
 end
 
 # Write a Ruby program to remove duplicate elements from a given array.
@@ -62,7 +62,7 @@ end
 # Write a Ruby program to compute the sum of all the elements. The array length must be 3 or more.
 def exercise_9(array_input)
     return "The array length must be 3 or more" if array_input.size < 3
-    return array_input.reduce(0, :+)
+    array_input.sum
 end
 
 # Write a Ruby program to split a delimited string into an array.
@@ -76,7 +76,7 @@ end
 # Input: [1, 2, 3]
 # Output: [2, 3, 1]
 def exercise_11(array_input)
-    return [array_input[1], array_input[2], array_input[0]]
+    [array_input[1], array_input[2], array_input[0]]
 end
 
 # Write a Ruby program to create a new array with the elements in reverse order from a given an array of integers length 3.
@@ -92,7 +92,7 @@ end
 # Output: [3, 3, 3]
 def exercise_13(array_input)
     max = array_input[0] > array_input[-1] ? array_input[0] : array_input[-1]
-    return [max, max, max]
+    [max, max, max]
 end
 
 # Write a Ruby program to compute the sum of the first 2 elements of a given array of integers. If the array length is less than 2, 
@@ -102,7 +102,7 @@ end
 def exercise_14(array_input)
     return 0 if array_input.size == 0
     return array_input.reduce(0, :+) if array_input.size < 2
-    return array_input[0] + array_input[1]
+    array_input[0] + array_input[1]
 end
 
 # Write a Ruby program to create an array of length 2 containing their middle elements from two given arrays of integers of length 3
@@ -111,7 +111,7 @@ end
 def exercise_15(array_input_1, array_input_2)
     return "Array input 1 must be have length 3" if array_input_1.size < 3
     return "Array input 2 must be have length 3" if array_input_2.size < 3
-    return [array_input_1[1], array_input_2[1]]
+    [array_input_1[1], array_input_2[1]]
 end
 
 # Write a Ruby program to concatenate array of arrays into one.
@@ -126,7 +126,7 @@ end
 # Output: true
 def exercise_17(array_input)
     return "Array input must be have length 2" if array_input.size < 2
-    return array_input.include?(4) || array_input.include?(7)
+    array_input.include?(4) || array_input.include?(7)
 end
 
 # Write a Ruby program to check whether a given array of integers of length 2 does not contain a 6 or a 9.
@@ -134,7 +134,7 @@ end
 # Output: true
 def exercise_18(array_input)
     return "Array input must be have length 2" if array_input.size < 2
-    return !array_input.include?(6) && !array_input.include?(9)
+    !array_input.include?(6) && !array_input.include?(9)
 end
 
 # Write a Ruby program to check whether a given array of integers contains 3 twice, or 5 twice. The array will be length 0, 1, or 2.
@@ -143,7 +143,7 @@ end
 def exercise_19(array_input)
     return false if array_input.size < 2
     return true if array_input[0] == 5 && array_input[1] == 5 || array_input[0] == 3 && array_input[1] == 3
-    return false
+    false
 end
 
 # Write a Ruby program to set 5 to 1 if there is a 3 immediately followed by a 5 in a given array of integers (length 3).
@@ -153,7 +153,7 @@ def exercise_20(array_input)
     return "Array input must be have length 3" if array_input.size < 3
     array_input[1] = 1 if array_input[0] == 3 && array_input[1] == 5
     array_input[2] = 1 if array_input[1] == 3 && array_input[2] == 5
-    return array_input
+    array_input
 end
 
 # Write a Ruby program to compute the sum of two arrays (length 3) and return the array which has the largest sum.
@@ -163,7 +163,7 @@ def exercise_21(array_input_1, array_input_2)
     sum_1 = array_input_1.reduce(0, :+)
     sum_2 = array_input_2.reduce(0, :+)
     return array_input_1 if sum_1 > sum_2
-    return array_input_2
+    array_input_2
 end
 
 # Write a Ruby program to create a new array of length 2 containing the middle two elements from a given array of integers of even length 2 or more.
@@ -172,7 +172,7 @@ end
 def exercise_22(array_input)
     return "Array input must be have even length 2" if array_input.size % 2 == 1
     middle = array_input.size / 2
-    return array_input[middle-1..middle]
+    array_input[middle-1..middle]
 end
 
 # Write a Ruby program to create a new array of length 4 containing all their elements from two array of integers, length 2.
@@ -196,7 +196,7 @@ end
 def exercise_25(array_input)
     return "Array input must be have odd length least 3" if array_input.size < 3 || array_input.size % 2 == 0
     middle = array_input.size / 2
-    return [array_input[middle - 1], array_input[middle], array_input[middle + 1]]
+    [array_input[middle - 1], array_input[middle], array_input[middle + 1]]
 end
 
 # Write a Ruby program to find the largest value from a given array of integers of odd length. The array length will be a least 1.
@@ -204,7 +204,7 @@ end
 # Output: 7
 def exercise_26(array_input)
     return "Array input must be have odd length 3" if array_input.size % 2 == 0
-    return array_input.max
+    array_input.max
 end
 
 # Write a Ruby program to create a new array using first three elements of a given array of integers. 
@@ -213,7 +213,7 @@ end
 # Output: [2, 3, 4]
 def exercise_27(array_input)
     return array_input if array_input.size < 3
-    return array_input[0...3]
+    array_input[0...3]
 end
 
 # Write a Ruby program to create a new array with the first element of two arrays. If length of any array is 0, ignore that array.
@@ -223,16 +223,14 @@ def exercise_28(array_input_1, array_input_2)
     return [] if array_input_1.size == 0 && array_input_2.size == 0
     return [array_input_1[0]] if array_input_2.size == 0
     return [array_input_2[0]] if array_input_1.size == 0
-    return [array_input_1[0], array_input_2[0]]
+    [array_input_1[0], array_input_2[0]]
 end
 
 # Write a Ruby program to get the number of even integers in a given array.
 # Input: [2, 2, 3]
 # Output: 2
 def exercise_29(array_input)
-    count = 0
-    array_input.each {|element| count += 1 if element.even?}
-    count
+    array_input.count{|element| element.even?}
 end
 
 # Write a Ruby program to find the difference between the largest and smallest values of a given array of integers and length 1 or more.
@@ -240,7 +238,7 @@ end
 # Output: 2
 def exercise_30(array_input)
     return "Array input must be have length least 1" if array_input.size < 1
-    return array_input.max - array_input.min
+    array_input.max - array_input.min
 end
 
 # Write a Ruby program to compute the average values of a given array of except the largest and smallest values. The array length must be 3 or more.
@@ -248,7 +246,7 @@ end
 # Output: 2.0
 def exercise_31(array_input)
     return "Array input must be have length least 3" if array_input.size < 3
-    return (array_input.sum - array_input.max - array_input.min).to_f / (array_input.size - 2)
+    (array_input.sum - array_input.max - array_input.min).to_f / (array_input.size - 2)
 end
 
 # Write a Ruby program to compute the sum of the numbers of a given array except 
@@ -277,7 +275,7 @@ def exercise_33(array_input)
     sum = 0
     array_input.each {|number| sum += number if number == 3}
     return true if sum == 9
-    return false
+    false
 end
 
 # Write a Ruby program to check whether the number of 2's is greater than the number of 5's of a given array of integers.
@@ -290,7 +288,7 @@ def exercise_34(array_input)
         count -= 1 if number == 5
     end
     return true if count > 0
-    return false
+    false
 end
 
 # Write a Ruby program to check whether every element is a 3 or a 5 in a given array of integers.
@@ -299,7 +297,7 @@ end
 def exercise_35(array_input)
     return false if array_input.size == 0
     array_input.each { |number| return false if (number != 3 && number != 5)}
-    return true
+    true
 end
 
 # Write a Ruby program to check whether it contains no 3 or it contains no 5.
@@ -312,7 +310,7 @@ def exercise_36(array_input)
         flag_3 = false if array_input[index] == 3
         flag_5 = false if array_input[index] == 5
     end
-    return flag_3 || flag_5
+    flag_3 || flag_5
 end
 
 # Write a Ruby program to check whether a given value appears everywhere in a given array. 
@@ -325,7 +323,7 @@ def exercise_37(array_input, value)
             return false
         end
     end
-    return true
+    true
 end
 
 # Write a Ruby program to check whether a given array contains a 3 next to a 3 or a 5 next to a 5, but not both.
@@ -338,7 +336,7 @@ def exercise_38(array_input)
         flag_3 = false if array_input[index] == 3 && array_input[index + 1] == 3
         flag_5 = false if array_input[index] == 5 && array_input[index + 1] == 5
     end
-    return flag_3 ^ flag_5
+    flag_3 ^ flag_5
 end
 
 # Write a Ruby program to check whether a given array of integers contains two 6's next to each other, 
@@ -355,7 +353,7 @@ def exercise_39(array_input)
         return true if array_input[index] == 6 && array_input[index + 2] == 6
         return true if array_input[index + 1] == 6 && array_input[index + 2] == 6
     end
-    return false
+    false
 end
 
 # Write a Ruby program to check whether there is a 2 in the array with a 3 somewhere later in a given array of integers.
@@ -369,7 +367,7 @@ def exercise_40(array_input)
         flag_3 = true if number == 3 && flag_2 == true
         break if flag_3 == true
     end
-    return flag_2 && flag_3
+    flag_2 && flag_3
 end
 
 # Write a Ruby program to check whether the value 2 appears in a given array of integers exactly 2 times, and no 2's are next to each other.
@@ -383,7 +381,7 @@ def exercise_41(array_input)
     end
     count += 1 if array_input[array_input.size - 1] == 2
     return true if count == 2
-    return false
+    false
 end
 
 # Write a Ruby program to convert an array into an index hash.
@@ -411,7 +409,7 @@ def exercise_44(array_input)
     return true if array_input.size < 2
     compare_number = array_input[0]
     array_input.each { |number| return false if compare_number != number}
-    return true
+    true
 end
 
 # Write a Ruby program to search items start with specified string of a given array.
@@ -420,7 +418,7 @@ end
 def exercise_45(array_input, search_keyword)
     result = []
     array_input.each { |element| result << element if element.start_with?(search_keyword)}
-    return result
+    result
 end
 
 # Write a Ruby program to iterate an array starting from the last element.
