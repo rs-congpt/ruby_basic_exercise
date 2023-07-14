@@ -13,10 +13,10 @@ def exercise_2(array_input)
     array_input[0] == 7 || array_input[-1] == 7
 end
 
-# Write a Ruby program to check whether first and the last element are the same of a given array of integers. The array length must be 1 or more.
+# Write a Ruby program to pick number of random elements from a given array.
 # Input: ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)
 # Output: [8, 2, 9]
-def exercise_3(array_input, count)
+def exercise_3(array_input, count) 
     array_input.sample(count)
 end
 
